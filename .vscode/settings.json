@@ -1,0 +1,8 @@
+{
+  "cSpell.words": ["postgresql"],
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false
+  }
+}

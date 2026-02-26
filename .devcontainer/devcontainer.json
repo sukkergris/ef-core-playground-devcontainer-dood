@@ -1,0 +1,23 @@
+{
+  "name": "xuint-and-testcontainers",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/xyz",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-ossdata.vscode-pgsql",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp",
+        "streetsidesoftware.code-spell-checker",
+        "csharpier.csharpier-vscode",
+        "streetsidesoftware.code-spell-checker-danish",
+        "EditorConfig.EditorConfig",
+        "task.vscode-task",
+        "SanaAjani.taskrunnercode",
+        "ms-vscode.test-adapter-converter",
+        "vscodevim.vim"
+      ]
+    }
+  }
+}
