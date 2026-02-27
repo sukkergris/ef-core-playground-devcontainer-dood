@@ -9,7 +9,7 @@ We enable Docker-out-of-Docker by sharing the host Docker socket and adding a fe
   - /var/run/docker.sock:/var/run/docker.sock
 - Install the Docker CLI in the devcontainer image.
 - Run the devcontainer in privileged mode (needed for Ryuk in some setups).
-- Disable Ryuk to avoid Resource Reaper timeouts in this environment.
+- Keep Ryuk enabled (Resource Reaper is working in this setup).
 - Force Testcontainers to use the host gateway address:
   - TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal
   - extra_hosts: host.docker.internal:host-gateway
