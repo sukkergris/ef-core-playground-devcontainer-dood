@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Agency.Migrations
 {
     [DbContext(typeof(AgencyDbContext))]
-    [Migration("20260227125447_Initial")]
+    [Migration("20260227164817_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -38,8 +38,6 @@ namespace Agency.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Id");
-
                     b.ToTable("Agencies", "Agency");
                 });
 
@@ -65,8 +63,6 @@ namespace Agency.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AgencyId");
-
-                    b.HasIndex("Id");
 
                     b.ToTable("Agents", "Agency");
                 });

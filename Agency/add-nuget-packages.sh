@@ -7,3 +7,5 @@ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 dotnet add package Microsoft.Extensions.Configuration.Abstractions
 dotnet add package Microsoft.Extensions.Configuration
 dotnet add package Microsoft.Extensions.Configuration.EnvironmentVariables
+
+dotnet add package Humanizer.Core

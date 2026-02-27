@@ -51,22 +51,10 @@ namespace Agency.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Agencies_Id",
-                schema: "Agency",
-                table: "Agencies",
-                column: "Id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Agents_AgencyId",
                 schema: "Agency",
                 table: "Agents",
                 column: "AgencyId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Agents_Id",
-                schema: "Agency",
-                table: "Agents",
-                column: "Id");
         }
 
         /// <inheritdoc />

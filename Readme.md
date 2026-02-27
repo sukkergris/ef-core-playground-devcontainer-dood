@@ -32,6 +32,17 @@ dotnet ef migrations add "Initial" \
 --startup-project Agency
 ```
 
+### Remove
+
+If not added to the db:
+`dotnet ef migrations remove --context AgencyDbContext --startup-project Agency --force`
+If applied to the db:
+`dotnet ef migrations remove --context AgencyDbContext --startup-project Agency`
+
 ## Devcontainer Docker (DooD)
 
 See [Devcontainer-DooD.md](Devcontainer-DooD.md) for the Docker-out-of-Docker setup used in this workspace.
+
+dotnet ef migrations add "Whaaat" \
+--context AgencyDbContext \
+--startup-project Agency

@@ -35,8 +35,6 @@ namespace Agency.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Id");
-
                     b.ToTable("Agencies", "Agency");
                 });
 
@@ -62,8 +60,6 @@ namespace Agency.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AgencyId");
-
-                    b.HasIndex("Id");
 
                     b.ToTable("Agents", "Agency");
                 });

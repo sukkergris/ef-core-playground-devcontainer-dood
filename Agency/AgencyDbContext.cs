@@ -1,3 +1,4 @@
+using System.Reflection;
 using Agency.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,10 +18,7 @@ public class AgencyDbContext : DbContext
     {
         modelBuilder.HasDefaultSchema(Globals.AgencyDefaultSchema);
 
-        modelBuilder.Entity<Agent>().HasIndex(a => a.Id);
-
-        modelBuilder.Entity<Models.Agency>().HasIndex(a => a.Id);
-
-        modelBuilder.Entity<Models.Agency>().HasMany(a => a.Agents);
-    }
+        // Add IEntityTypeConfiguration's (See. the folder EntityConfigurations)
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+   }
 }
