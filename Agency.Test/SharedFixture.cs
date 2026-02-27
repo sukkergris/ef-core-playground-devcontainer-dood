@@ -1,3 +1,5 @@
+using Agency;
+using Microsoft.EntityFrameworkCore;
 using Testcontainers.PostgreSql;
 
 namespace Agency.Test;
@@ -6,6 +8,7 @@ public sealed class SharedFixture : IAsyncLifetime
 {
 
     private readonly PostgreSqlContainer _testcontainer;
+    public string ConnectionString { get; private set; }
 
     public SharedFixture()
     {
@@ -20,8 +23,22 @@ public sealed class SharedFixture : IAsyncLifetime
         throw new NotImplementedException();
     }
 
-    public Task InitializeAsync()
+    public async Task InitializeAsync()
     {
-       return _testcontainer.StartAsync();
+        await _testcontainer.StartAsync();
+
+    }
+
+    public AgencyDbContext Create()
+    {
+        if (string.IsNullOrWhiteSpace(ConnectionString)) throw new ArgumentNullException(nameof(ConnectionString));
+
+        DbContextOptionsBuilder<AgencyDbContext> optionsBuilder = new();
+        var options = Base.DbContextHelpers.GetDbContextOptions(
+            optionsBuilder,
+            ConnectionString,
+             Agency.Globals.AgencyDefaultSchema);
+
+        return new AgencyDbContext(options.Options);
     }
 }

@@ -5,8 +5,6 @@ namespace Agency;
 
 public class AgencyDbContext : DbContext
 {
-    public const string Schema = "agency";
-
     public AgencyDbContext(DbContextOptions<AgencyDbContext> options) : base(options)
     {
 
@@ -17,7 +15,7 @@ public class AgencyDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasDefaultSchema(Schema);
+        modelBuilder.HasDefaultSchema(Globals.AgencyDefaultSchema);
 
         modelBuilder.Entity<Agent>().HasIndex(a => a.Id);
 
