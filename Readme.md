@@ -31,3 +31,7 @@ dotnet ef migrations add "Initial" \
 --context AgencyDbContext \
 --startup-project Agency
 ```
+
+## Devcontainer Docker (DooD)
+
+See [Devcontainer-DooD.md](Devcontainer-DooD.md) for the Docker-out-of-Docker setup used in this workspace.
