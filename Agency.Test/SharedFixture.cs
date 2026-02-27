@@ -8,7 +8,7 @@ public sealed class SharedFixture : IAsyncLifetime
 {
 
     private readonly PostgreSqlContainer _testcontainer;
-    public string ConnectionString { get; private set; }
+    public string ConnectionString { get; private set; } = string.Empty;
 
     public SharedFixture()
     {
@@ -18,15 +18,16 @@ public sealed class SharedFixture : IAsyncLifetime
             .WithPassword("password")
             .Build();
     }
-    public Task DisposeAsync()
-    {
-        throw new NotImplementedException();
-    }
+    public Task DisposeAsync() =>
+        _testcontainer.DisposeAsync().AsTask();
 
     public async Task InitializeAsync()
     {
         await _testcontainer.StartAsync();
+        ConnectionString = _testcontainer.GetConnectionString();
 
+        await using var context = Create();
+        await context.Database.MigrateAsync();
     }
 
     public AgencyDbContext Create()

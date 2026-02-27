@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y \
     tree \
     netcat-openbsd \
     postgresql-client \
+    docker.io \
     curl \
     && curl -1sLf 'https://dl.cloudsmith.io/public/task/task/setup.deb.sh' | bash \
     && apt-get install -y task \
