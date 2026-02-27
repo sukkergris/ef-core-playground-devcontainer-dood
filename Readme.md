@@ -42,7 +42,3 @@ If applied to the db:
 ## Devcontainer Docker (DooD)
 
 See [Devcontainer-DooD.md](Devcontainer-DooD.md) for the Docker-out-of-Docker setup used in this workspace.
-
-dotnet ef migrations add "Whaaat" \
---context AgencyDbContext \
---startup-project Agency
