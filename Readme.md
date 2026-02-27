@@ -12,3 +12,22 @@ https://mcr.microsoft.com/artifact/mar/dotnet/sdk/
 
 > `dotnet reference add Base/Base.csproj --project Agency/Agency.csproj`
 > `dotnet reference add Base/Base.csproj --project Agency.Test/Agency.Test.csproj`
+
+## Migrations
+
+### Add
+
+No database access is required when adding.
+
+```sh
+dotnet ef migrations add "NAME-MIGRATION" \
+--context DataContext \
+--startup-project ../your-project-containing-the-app-settings
+```
+
+Eg.:
+```sh
+dotnet ef migrations add "Initial" \
+--context AgencyDbContext \
+--startup-project Agency
+```
